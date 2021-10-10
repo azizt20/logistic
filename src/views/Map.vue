@@ -1,7 +1,6 @@
 <template>
-  <div class="map">
+  <div class="yandex-map">
 
-    <MainMenu class="main-menu"/>
 
     <yandex-map class="yandex-map" :coords=[] show-all-markers="true">
 
@@ -10,17 +9,14 @@
         <ymap-marker style="position: relative"
                      :marker-id="info.id"
                      :coords="info.coord"
-                     :icon="{...markerIcon, content: 'info.name'}"
+                     :icon="markerIconN(info.id)"
                      @click="select"
 
         />
-        <DriverInfo />
       </div>
     </yandex-map>
 
-    <a-layout-footer class="nav">
-      <navbar/>
-    </a-layout-footer>
+
 
   </div>
 </template>
@@ -28,20 +24,16 @@
 <script>
 import { createNamespacedHelpers } from 'vuex'
 import {yandexMap, ymapMarker} from 'vue-yandex-maps'
-import Navbar from "../components/Navbar";
-import DriverInfo from "../components/DriverInfo";
-import MainMenu from "../components/MainMenu"
+// import DriverInfo from "../components/DriverInfo";
 
 const { mapGetters: mapMapGetters, mapActions: mapMapActions } = createNamespacedHelpers('map')
 
 export default {
   name: "Map",
-  components: {yandexMap, ymapMarker, Navbar, MainMenu, DriverInfo},
+  components: {yandexMap, ymapMarker,},
 
   data() {
     return {
-      // selectId: '',
-      id: '',
       coords: [41.3082, 69.2598],
       markerIcon: {
         layout: 'default#imageWithContent',
@@ -58,21 +50,24 @@ export default {
   mounted() {
   this.getDrivers()
   },
+
   methods: {
     ...mapMapActions({
       getDrivers: 'getFakeDrivers'
     }),
     select (e) {
-      // this.$store.dispatch('select');
-      // this.selectId = e.get('cords');
-      // alert(e)
-      alert(e.get())
-      // console.log(e.markerIcon)
-    }
+      console.log(e.get('coords'))
+    },
+    markerIconN () {
+      return {...this.markerIcon, content: 'id'}
+
+    },
   },
 
+
+
   computed: {
-    ...mapMapGetters(["getCoords"]),
+    ...mapMapGetters(["getCoords", "getCoordsById"]),
   }
 }
 </script>
@@ -83,12 +78,9 @@ export default {
   height: 100%;
 }
 
-.map {
-  height: 100%;
-  width: 100%;
-}
 
-.nav {
+
+.Navbar {
   position: absolute;
   bottom: 0;
   background: #ccc;
@@ -99,7 +91,7 @@ export default {
   align-items: center;
 }
 
-.main-menu {
+.MainMenu {
   position: absolute;
   left: 50px;
   top: 50px;

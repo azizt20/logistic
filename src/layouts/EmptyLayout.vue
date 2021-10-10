@@ -1,12 +1,13 @@
 <template>
-<div class="menu">
-<h1>menu</h1>
+<div class="EmptyLayaut container">
+
+  <router-view/>
 </div>
 </template>
 
 <script>
 export default {
-  name: "MainMenu"
+  name: 'EmptyLayout'
 }
 </script>
 

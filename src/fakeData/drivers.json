@@ -6,7 +6,8 @@
     ],
     "id": "1",
     "name": "Ivan",
-    "avatar": "http://simpleicon.com/wp-content/uploads/user1.png"
+    "avatar": "http://simpleicon.com/wp-content/uploads/user1.png",
+    "phoneNumber": "+998944444411"
   },
   {
     "coord": [
@@ -15,7 +16,8 @@
     ],
     "id": "2",
     "name": "Vlad",
-    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png"
+    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png",
+    "phoneNumber": "+998944444422"
   },
   {
     "coord": [
@@ -24,7 +26,8 @@
     ],
     "id": "3",
     "name": "Vlad",
-    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png"
+    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png",
+    "phoneNumber": "+998944444433"
   },
   {
     "coord": [
@@ -33,7 +36,8 @@
     ],
     "id": "4",
     "name": "Vlad",
-    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png"
+    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png",
+    "phoneNumber": "+998944444444"
   },
   {
     "coord": [
@@ -42,7 +46,8 @@
     ],
     "id": "5",
     "name": "Vlad",
-    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png"
+    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png",
+    "phoneNumber": "+998944444455"
   },
   {
     "coord": [
@@ -51,6 +56,7 @@
     ],
     "id": "6",
     "name": "Petr",
-    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXjntstzFcaTx70hgzKZa2vn8zhqkt1wj9pA&usqp=CAU"
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXjntstzFcaTx70hgzKZa2vn8zhqkt1wj9pA&usqp=CAU",
+    "phoneNumber": "+998944444466"
   }
 ]

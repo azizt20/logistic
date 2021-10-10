@@ -1,8 +1,25 @@
 <template>
   <div id="app">
-    <router-view/>
+    <component :is="layout">
+      <router-view/>
+    </component>
   </div>
 </template>
+
+<script>
+import EmptyLayout from "./layouts/EmptyLayout";
+import MenuLayout from "./layouts/MenuLayout";
+export default {
+  computed: {
+    layout() {
+      return this.$route.meta.layout + 'layout'
+    }
+  },
+comments: {
+  MenuLayout, EmptyLayout
+}
+}
+</script>
 
 <style lang="scss">
 #app {

@@ -1,12 +1,12 @@
 <template>
-<div class="navbar">
-<router-link to="/drivers">Все водители</router-link>
+<div class="Navbar">
+<router-link to="drivers">Все водители</router-link>
 </div>
 </template>
 
 <script>
 export default {
-  name: "navbar"
+  name: "Navbar"
 }
 </script>
 

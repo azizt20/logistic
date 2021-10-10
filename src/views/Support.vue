@@ -1,12 +1,12 @@
 <template>
-<div class="menu">
-<h1>menu</h1>
+<div class="Support">
+  Служба поддержки
 </div>
 </template>
 
 <script>
 export default {
-  name: "MainMenu"
+  name: "Support"
 }
 </script>
 

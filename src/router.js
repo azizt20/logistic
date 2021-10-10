@@ -11,6 +11,7 @@ const routes = [
     component: Login,
     meta: {
       title: 'Вход',
+      layout: 'empty'
     }
   },
   {
@@ -19,6 +20,7 @@ const routes = [
     component: () => import('./views/Map.vue'),
     meta: {
       title: 'Главная',
+      layout: 'menu',
       // requiredAuth: true,
     }
   },
@@ -28,6 +30,47 @@ const routes = [
     component: () => import('./views/Drivers.vue'),
     meta: {
       title: 'Водители',
+      layout: 'empty',
+      // requiredAuth: true,
+    }
+  },
+  {
+    path: '/aboutapp',
+    name: 'aboutapp',
+    component: () => import('./views/InfoAboutApp'),
+    meta: {
+      title: 'Информация о приложении',
+      layout: 'empty',
+      // requiredAuth: true,
+    }
+  },
+  {
+    path: '/support',
+    name: 'support',
+    component: () => import('./views/Support'),
+    meta: {
+      title: 'Служба поддержки',
+      layout: 'empty',
+      // requiredAuth: true,
+    }
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: () => import('./views/Settings'),
+    meta: {
+      title: 'Настройки приложения',
+      layout: 'empty',
+      // requiredAuth: true,
+    }
+  },
+  {
+    path: '/account',
+    name: 'account',
+    component: () => import('./views/Account'),
+    meta: {
+      title: 'Настройки аккаунта',
+      layout: 'empty',
       // requiredAuth: true,
     }
   }
