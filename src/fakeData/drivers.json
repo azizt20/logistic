@@ -1,0 +1,56 @@
+[
+  {
+    "coord": [
+      41.3082,
+      69.2598
+    ],
+    "id": "1",
+    "name": "Ivan",
+    "avatar": "http://simpleicon.com/wp-content/uploads/user1.png"
+  },
+  {
+    "coord": [
+      41.35,
+      69.2498
+    ],
+    "id": "2",
+    "name": "Vlad",
+    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png"
+  },
+  {
+    "coord": [
+      41.35,
+      69.1498
+    ],
+    "id": "3",
+    "name": "Vlad",
+    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png"
+  },
+  {
+    "coord": [
+      41.55,
+      69.3498
+    ],
+    "id": "4",
+    "name": "Vlad",
+    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png"
+  },
+  {
+    "coord": [
+      41.15,
+      69.2498
+    ],
+    "id": "5",
+    "name": "Vlad",
+    "avatar": "https://image.flaticon.com/icons/png/512/16/16363.png"
+  },
+  {
+    "coord": [
+      41.33,
+      69.2598
+    ],
+    "id": "6",
+    "name": "Petr",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXjntstzFcaTx70hgzKZa2vn8zhqkt1wj9pA&usqp=CAU"
+  }
+]

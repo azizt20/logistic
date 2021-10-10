@@ -3,8 +3,13 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+import YmapPlugin from 'vue-yandex-maps'
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
 
 Vue.config.productionTip = false
+Vue.use(YmapPlugin)
+Vue.use(Antd)
 
 new Vue({
   router,
