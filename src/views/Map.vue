@@ -1,7 +1,6 @@
 <template>
   <div class="yandex-map">
 
-
     <yandex-map class="yandex-map" :coords=[] show-all-markers="true">
 
       <div v-for="info in getCoords"
@@ -9,7 +8,7 @@
         <ymap-marker style="position: relative"
                      :marker-id="info.id"
                      :coords="info.coord"
-                     :icon="markerIconN(info.id)"
+                     :icon="markerIconN(info)"
                      @click="select"
 
         />
@@ -17,16 +16,20 @@
     </yandex-map>
 
 
-
   </div>
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex'
+import {createNamespacedHelpers} from 'vuex'
 import {yandexMap, ymapMarker} from 'vue-yandex-maps'
 // import DriverInfo from "../components/DriverInfo";
 
-const { mapGetters: mapMapGetters, mapActions: mapMapActions } = createNamespacedHelpers('map')
+const {
+  mapGetters: mapMapGetters,
+  mapActions: mapMapActions,
+  mapState: mapMapState,
+  mapMutations: mapMutations
+} = createNamespacedHelpers('map')
 
 export default {
   name: "Map",
@@ -34,6 +37,7 @@ export default {
 
   data() {
     return {
+      selectDriver: null,
       coords: [41.3082, 69.2598],
       markerIcon: {
         layout: 'default#imageWithContent',
@@ -48,26 +52,30 @@ export default {
   },
 
   mounted() {
-  this.getDrivers()
+    this.getDrivers()
+    this.readSelectedDriver()
   },
 
   methods: {
     ...mapMapActions({
       getDrivers: 'getFakeDrivers'
     }),
-    select (e) {
+    ...mapMutations({
+      readSelectedDriver: 'READ_SELECTED_DRIVER'
+    }),
+    select(e) {
       console.log(e.get('coords'))
     },
-    markerIconN () {
-      return {...this.markerIcon, content: 'id'}
-
+    markerIconN({avatar, name, id}) {
+      return {...this.markerIcon, imageHref: avatar, id, content: name}
     },
   },
 
 
-
   computed: {
     ...mapMapGetters(["getCoords", "getCoordsById"]),
+    ...mapMapState(["selectedDriver"]),
+
   }
 }
 </script>
@@ -77,7 +85,6 @@ export default {
   width: 100%;
   height: 100%;
 }
-
 
 
 .Navbar {

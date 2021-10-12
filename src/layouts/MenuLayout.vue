@@ -1,34 +1,30 @@
 <template>
-  <div class="MenuLayout">
-    <a-layout id="components-layout-demo-custom-trigger" class="">
-      <a-layout-sider v-model="collapsed" :trigger="null" collapsible>
-        <div class="logo" />
-        <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
-          <a-menu-item key="1">
-            <a-icon type="user" />
-            <span>nav 1</span>
-          </a-menu-item>
-          <a-menu-item key="2">
-            <a-icon type="video-camera" />
-            <span>nav 2</span>
-          </a-menu-item>
-          <a-menu-item key="3">
-            <a-icon type="upload" />
-            <span>nav 3</span>
-          </a-menu-item>
-        </a-menu>
-      </a-layout-sider>
+  <div class="MenuLayout h-100 w-100">
+    <a-layout id="components-layout-demo-custom-trigger " class="h-100">
+<!--      <a-layout-sider v-model="collapsed" class="" :trigger="null" collapsible>-->
+<!--        <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">-->
+<!--          <a-menu-item key="1">-->
+<!--            <a-icon type="user" class="relative" />-->
+<!--            <span>nav 1</span>-->
+<!--          </a-menu-item>-->
+<!--          <a-menu-item key="2">-->
+<!--            <a-icon type="video-camera" />-->
+<!--            <span>nav 2</span>-->
+<!--          </a-menu-item>-->
+<!--          <a-menu-item key="3">-->
+<!--            <a-icon type="upload" />-->
+<!--            <span>nav 3</span>-->
+<!--          </a-menu-item>-->
+<!--        </a-menu>-->
+<!--      </a-layout-sider>-->
+      <a-icon
+          class="trigger togle"
+          :type="collapsed ? 'menu-unfold' : 'menu-fold'"
+          @click="() => (collapsed = !collapsed)"
+      />
       <a-layout>
-        <a-layout-header style="background: #fff; padding: 0">
-          <a-icon
-              class="trigger"
-              :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-              @click="() => (collapsed = !collapsed)"
-          />
-        </a-layout-header>
-        <a-layout-content
-            :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
-        >
+
+        <a-layout-content>
           <router-view/>
         </a-layout-content>
         <a-layout-footer>
@@ -70,9 +66,16 @@ export default {
   color: #1890ff;
 }
 
-#components-layout-demo-custom-trigger .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+
+.relative{
+  position: relative;
+}
+.togle{
+  position: absolute;
+  top: 0;
+  right: 0px;
+  z-index: 100;
+  font-size: 10px;
+
 }
 </style>

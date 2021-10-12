@@ -12,12 +12,12 @@ import MenuLayout from "./layouts/MenuLayout";
 export default {
   computed: {
     layout() {
-      return this.$route.meta.layout + 'layout'
+      return this.$route.meta.layout + '-layout'
     }
   },
-comments: {
-  MenuLayout, EmptyLayout
-}
+  components: {
+    MenuLayout, EmptyLayout
+  }
 }
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <div class="drivers">
+
     <a-rows type="flex" align="middle" v-for="info in getCoords" :key="info.id">
       <a-row type="flex" align="middle" justify="start" class="box">
         <a-row type="flex" align="middle" justify="start" class="border w-100">
@@ -16,11 +17,12 @@
           </a-col>
         </a-row>
         <a-col :span="12">
-          <a-button type="link" > <a-icon type="search" /> Найти </a-button>
+          <a-button type="link" @click="find(info.id)"> <a-icon type="search" /> Найти </a-button>
         </a-col>
         <a-col :span="12">
           <a-button type="link" href="tel:99894"> <a-icon type="phone" /> Связаться </a-button>
         </a-col>
+
       </a-row>
     </a-rows>
   </div>
@@ -30,22 +32,33 @@
 import {createNamespacedHelpers} from "vuex";
 
 
-const {mapGetters: mapMapGetters, mapActions: mapMapActions} = createNamespacedHelpers('map')
+const {mapGetters: mapMapGetters, mapActions: mapMapActions, mapState: mapMapState} = createNamespacedHelpers('map')
 
 
 export default {
   name: "Drivers",
   computed: {
+    ...mapMapState({
+      selectedDriver: 'selectedDriver'
+    }),
     ...mapMapGetters(["getCoords", "getCoordsById"]),
+
   },
   methods: {
     ...mapMapActions({
-      getDrivers: 'getFakeDrivers'
+      getDrivers: 'getFakeDrivers',
+      findDriver: 'findDriver'
     }),
-    mounted() {
-      this.getDrivers()
+    find(id) {
+      this.findDriver(id).then(() => {
+        this.$router.push('map')
+      })
+
     },
-  }
+  },
+  mounted() {
+    this.getDrivers()
+  },
 }
 </script>
 
