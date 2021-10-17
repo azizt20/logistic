@@ -18,6 +18,9 @@ export default {
         READ_SELECTED_DRIVER(state) {
             state.selectedDriver = localStorage.getItem('selected_driver_id')
         },
+        CLEAR_SELECTED_DRIVER(state) {
+            state.selectedDriver = localStorage.clear()
+        }
     },
     actions: {
         async getFakeDrivers({commit}) {
@@ -35,7 +38,15 @@ export default {
                     resolve()
                 }, 500)
             })
-        }
+        },
+        // clearSelectedDriver({ commit }, id){
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             commit('CLEAR_SELECTED_DRIVER', id)
+        //             resolve()
+        //         }, 500)
+        //     })
+        // },
 
     },
     getters: {

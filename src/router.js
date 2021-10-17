@@ -45,7 +45,7 @@ const routes = [
     }
   },
   {
-    path: '/support',
+      path: '/support',
     name: 'support',
     component: () => import('./views/Support'),
     meta: {

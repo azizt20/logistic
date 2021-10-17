@@ -1,5 +1,5 @@
 <template>
-<div class="EmptyLayaut container">
+<div class="EmptyLayaut">
 
   <router-view/>
 </div>
